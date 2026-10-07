@@ -27,7 +27,6 @@ class IrisInput(BaseModel):
     sepal_width: PositiveFinite
     petal_length: PositiveFinite
     petal_width: PositiveFinite
-    ID: 
 
 @app.get("/")
 def root():
