@@ -27,6 +27,7 @@ class IrisInput(BaseModel):
     sepal_width: PositiveFinite
     petal_length: PositiveFinite
     petal_width: PositiveFinite
+    ID: 
 
 @app.get("/")
 def root():
@@ -45,11 +46,11 @@ def predict(data: IrisInput):
     probabilities = model.predict_proba(features)[0]
     names = metadata["target_names"]
     return {
+        "ID": "683380297-6",
         "model_version": metadata["model_version"],
         "input": payload,
         "predicted_class_index": predicted,
         "predicted_class_name": names[predicted],
         "probabilities": {names[int(k)]: float(p)
                           for k, p in zip(model.classes_, probabilities)}
-        "ID" : print("683380297-6")
     }
