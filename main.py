@@ -51,4 +51,5 @@ def predict(data: IrisInput):
         "predicted_class_name": names[predicted],
         "probabilities": {names[int(k)]: float(p)
                           for k, p in zip(model.classes_, probabilities)}
+        "ID" : print("683380297-6")
     }
